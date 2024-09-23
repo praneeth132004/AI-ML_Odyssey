@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - AIML Odyssey</title>
+    <link rel="stylesheet" th:href="@{/css/leaderboard-styles.css}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/index" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a href="learn">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/aitools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section">
+        <h1>Leaderboard</h1>
+        <p>Here are the top contributors of AIML Odyssey community:</p>
+
+        <div class="leaderboard-container">
+            <img src="/images/lb.png" alt="Leaderboard Image" class="leaderboard-image">
+            
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Data (In real implementation, replace with dynamic content using Thymeleaf or any backend) -->
+                    <tr>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>1200</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Lee</td>
+                        <td>michael@example.com</td>
+                        <td>1050</td>
+                    </tr>
+                    <!-- Repeat as needed -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+</body>
+</html>

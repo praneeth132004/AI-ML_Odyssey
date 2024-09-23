@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - AIML Odyssey</title>
+    <link rel="stylesheet" th:href="@{css/pstyles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a th:href="@{/projects}" class="active">Projects</a></li>
+                <li><a th:href="@{/aitools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Introduction Section -->
+    <section class="projects-intro">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h1>Explore Our AI & ML Projects</h1>
+                <p>We offer a variety of AI and ML projects tailored to different experience levels. Whether you're a beginner, intermediate, or advanced learner, we have a project for you! Each project is designed to provide hands-on experience, enhance your skills, and prepare you for real-world applications.</p>
+            </div>
+            <div class="intro-image">
+                <img th:src="@{/images/pr.jpg}" alt="Projects Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Categories Section -->
+    <section class="projects-categories">
+        <h2>Select Your Project Level</h2>
+        <div class="categories-container">
+            <!-- Beginner Envelope -->
+            <div class="category-envelope beginner" onclick="location.href='/beginner';">
+                <div class="envelope-content">
+                    <h3>Beginner</h3>
+                </div>
+            </div>
+
+            <!-- Intermediate Envelope -->
+            <div class="category-envelope intermediate" onclick="location.href='/Intermediate';">
+                <div class="envelope-content">
+                    <h3>Intermediate</h3>
+                </div>
+            </div>
+
+            <!-- Advanced Envelope -->
+            <div class="category-envelope advanced" onclick="location.href='/Advanced';">
+                <div class="envelope-content">
+                    <h3>Advanced</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script th:src="@{js/projects-scripts.js}"></script>
+</body>
+</html>

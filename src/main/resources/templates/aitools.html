@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools - AIML Odyssey</title>
+    <link rel="stylesheet" th:href="@{/css/aitools-styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/aitools}" class="active">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- AI Tools Introduction Section -->
+    <section class="tools-intro">
+        <h1>Top AI Tools for Your Next Project</h1>
+        <p>Discover the most powerful AI tools available today that can help you enhance your workflow, generate creative content, automate processes, and more. Each tool has unique features tailored for different needs in AI and machine learning. Explore and learn more about these amazing tools below.</p>
+    </section>
+
+    <!-- AI Tools Cards Section -->
+    <section class="tools-cards">
+        <div class="cards-container">
+            <!-- Tool Card 1 - ChatGPT -->
+            <div class="tool-card">
+                <img src="/images/cgpt.png" alt="ChatGPT">
+                <h3>ChatGPT</h3>
+                <p>An advanced AI chatbot by OpenAI, perfect for conversation and content generation.</p>
+                <a href="https://chat.openai.com/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 2 - Midjourney -->
+            <div class="tool-card">
+                <img src="/images/midj.png" alt="Midjourney">
+                <h3>Midjourney</h3>
+                <p>An AI art generator that creates stunning visuals from textual descriptions.</p>
+                <a href="https://www.midjourney.com/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 3 - DALL-E -->
+            <div class="tool-card">
+                <img src="/images/de.png" alt="DALL-E">
+                <h3>DALL-E</h3>
+                <p>A revolutionary AI by OpenAI that generates unique and creative images from text prompts.</p>
+                <a href="https://openai.com/dall-e/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 4 - Otter.ai -->
+            <div class="tool-card">
+                <img src="/images/oai.png" alt="Otter.ai">
+                <h3>Otter.ai</h3>
+                <p>Transcribe meetings and conversations in real-time with this powerful AI tool.</p>
+                <a href="https://otter.ai/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 5 - Lumen5 -->
+            <div class="tool-card">
+                <img src="/images/lumen.jpg" alt="Lumen5">
+                <h3>Lumen5</h3>
+                <p>Create engaging videos from blog posts and content using AI-driven video creation tools.</p>
+                <a href="https://www.lumen5.com/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 6 - Copy.ai -->
+            <div class="tool-card">
+                <img src="/images/cpi.png" alt="Copy.ai">
+                <h3>Copy.ai</h3>
+                <p>Generate high-quality marketing copy for your business with AI.</p>
+                <a href="https://www.copy.ai/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 7 - Jasper.ai -->
+            <div class="tool-card">
+                <img src="/images/jsp.png" alt="Jasper.ai">
+                <h3>Jasper.ai</h3>
+                <p>A powerful AI writing assistant that can generate content for blogs, ads, and more.</p>
+                <a href="https://www.jasper.ai/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 8 - RunwayML -->
+            <div class="tool-card">
+                <img src="/images/rw.jpg" alt="RunwayML">
+                <h3>RunwayML</h3>
+                <p>An AI video editing tool that enables you to use machine learning models in creative projects.</p>
+                <a href="https://runwayml.com/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 9 - Synthesia -->
+            <div class="tool-card">
+                <img src="/images/syn.jpg" alt="Synthesia">
+                <h3>Synthesia</h3>
+                <p>Create professional AI-generated videos with human avatars in minutes.</p>
+                <a href="https://www.synthesia.io/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+
+            <!-- Tool Card 10 - Replika -->
+            <div class="tool-card">
+                <img src="/images/rep.jpg" alt="Replika">
+                <h3>Replika</h3>
+                <p>An AI companion that helps you learn, talk, and grow emotionally.</p>
+                <a href="https://replika.com/" class="learn-more-btn" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script th:src="@{/js/ai-tools-scripts.js}"></script>
+</body>
+</html>

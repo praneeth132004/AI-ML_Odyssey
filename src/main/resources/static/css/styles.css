@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #2c3e50;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin-left: 20px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.navbar-nav a:hover {
+    color: #18bc9c;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('/images/nspr2.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 150px 10%;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 10%;
+    background-color: #ecf0f1;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.about-content p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-content .join-btn {
+    padding: 12px 40px;
+    font-size: 1rem;
+    border: none;
+    background-color: #18bc9c;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: pulse 2s infinite;
+}
+
+.about-content .join-btn:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+/* Offer Section */
+.offer-section {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.offer-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.offer-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #ecf0f1;
+    padding: 40px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #18bc9c;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px 10%;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

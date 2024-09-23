@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Projects - AIML Odyssey</title>
+    <link rel="stylesheet" th:href="@{/css/BIAstyles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/ai-tools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+        </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Table Section -->
+    <section class="projects-table-section">
+        <h1>Intermediate AI/ML Projects</h1>
+        <div class="table-container">
+            <table class="projects-table">
+                <thead>
+                    <tr>
+                        <th>Serial Number</th>
+                        <th>Project Name</th>
+                        <th>Reference</th>
+                        <th>Notes</th>
+                        <th>Project Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr>
+                        <td>1</td>
+                        <td>Sentiment Analysis of Social Media Posts</td>
+                        <td><a href="https://www.scaler.com/topics/data-science/social-media-sentiment-analysis/" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr>
+                        <td>2</td>
+                        <td>Chatbot for Customer Service</td>
+                        <td><a href="https://landbot.io/blog/how-to-build-customer-service-chatbot" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr>
+                        <td>3</td>
+                        <td>Image Classification System</td>
+                        <td><a href="https://www.analyticsvidhya.com/blog/2022/01/image-classification-using-machine-learning/" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr>
+                        <td>4</td>
+                        <td>Fraud Detection System</td>
+                        <td><a href="https://www.geeksforgeeks.org/online-payment-fraud-detection-using-machine-learning-in-python/" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr>
+                        <td>5</td>
+                        <td>Personalized Recommendation System</td>
+                        <td><a href="https://www.geeksforgeeks.org/recommendation-system-in-python/" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 6 -->
+                    <tr>
+                        <td>6</td>
+                        <td>Predictive Maintenance System</td>
+                        <td><a href="https://www.javatpoint.com/predictive-maintenance-using-machine-learning" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 7 -->
+                    <tr>
+                        <td>7</td>
+                        <td>Traffic Prediction and Management System</td>
+                        <td><a href="https://www.javatpoint.com/traffic-prediction-using-machine-learning" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 8 -->
+                    <tr>
+                        <td>8</td>
+                        <td>Voice Assistant</td>
+                        <td><a href="https://www.geeksforgeeks.org/voice-assistant-using-python/" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 9 -->
+                    <tr>
+                        <td>9</td>
+                        <td>Automatic Text Summarization</td>
+                        <td><a href="https://www.analyticsvidhya.com/blog/2019/06/comprehensive-guide-text-summarization-using-deep-learning-python/" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Row 10 -->
+                    <tr>
+                        <td>10</td>
+                        <td>Health Monitoring System</td>
+                        <td><a href="https://github.com/DHEEPAK29/Project-ML-IoT" target="_blank">Reference</a></td>
+                        <td><a href="javascript:void(0)" onclick="openNotepad()">📝</a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+
+    <!-- JavaScript for Notes and Animations -->
+    <script>
+        function openNotepad() {
+            window.open('https://anotepad.com', '_blank');
+        }
+    </script>
+</body>
+</html>

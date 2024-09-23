@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - AIML Odyssey</title>
+    <link rel="stylesheet" th:href="@{css/community-styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/aitools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Community Section -->
+    <section class="community-section">
+        <div class="community-content">
+            <div class="community-text">
+                <h1>Join the AIML Odyssey Community</h1>
+                <p>Our community is a place for AI/ML enthusiasts to collaborate, share knowledge, and grow together. Join our community to stay updated with the latest advancements, engage in discussions, ask questions, and get AI-powered assistance for your learning journey.</p>
+            </div>
+            <div class="community-image">
+                <img th:src="@{/images/comm.png}" alt="Community Image">
+            </div>
+        </div>
+
+        <!-- Envelopes Section -->
+        <div class="envelopes-section">
+            <div class="envelope" onclick="window.location.href='/leaderboard'">
+                <div class="envelope-icon">🏆</div>
+                <h2>Leaderboard</h2>
+                <p>Check out the top performers in our community.</p>
+            </div>
+            <div class="envelope" onclick="window.location.href='/post-your-doubt'">
+                <div class="envelope-icon">❓</div>
+                <h2>Post Your Doubt</h2>
+                <p>Have a question? Post your doubts and get answers.</p>
+            </div>
+            <div class="envelope" onclick="window.location.href='/ai-assistance'">
+                <div class="envelope-icon">🤖</div>
+                <h2>AI Assistance</h2>
+                <p>Need help? Get AI-powered assistance now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        // Add any JavaScript if needed in the future
+    </script>
+</body>
+</html>

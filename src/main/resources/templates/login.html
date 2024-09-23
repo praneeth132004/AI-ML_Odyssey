@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AIML Odyssey</title>
+    <link rel="stylesheet" th:href="@{/css/login-styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/aitools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li><a th:href="@{/login}" class="active">Login</a></li>
+                <li><a th:href="@{/signup}">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-form-container">
+                <h1>Login to AIML Odyssey</h1>
+                <form class="login-form" th:action="@{/login}" method="post">
+                   <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                   </div>
+                   <div class="form-group">
+                         <label for="password">Password</label>
+                         <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                   </div>
+                <button type="submit" class="submit-btn">Login</button>
+    
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+    </div>
+</form>
+            </div>
+            <div class="login-image">
+                <img src="/images/ai2.jpg" alt="Login Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script src="login-scripts.js"></script>
+</body>
+</html>
