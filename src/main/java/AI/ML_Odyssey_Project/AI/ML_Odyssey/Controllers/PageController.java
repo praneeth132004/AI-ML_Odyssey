@@ -15,11 +15,16 @@ public class PageController {
 	@Autowired
     private UserRepository userRepository;
 	
-	@GetMapping("/home")
+	@GetMapping("/")
     public String getHome() {
         return "index"; // Ensure index.html is in the templates folder
     }
     
+	@GetMapping("/home")
+    public String getnHome() {
+        return "home"; // Ensure index.html is in the templates folder
+    }
+	
     @GetMapping("/signup")
     public String getSignup() {
         return "signup"; // This should match the filename signup.html

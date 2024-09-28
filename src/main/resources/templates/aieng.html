@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer Roadmap</title>
+    <link rel="stylesheet" href="/css/AIR-styles.css">
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/learn}">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/aitools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+     
+    
+    <!-- AIML Introduction Section -->
+    <section class="aiml-intro">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h1>Roadmap for AIML</h1>
+                <p>Embark on your journey to becoming an AI Engineer. Below is the roadmap covering key areas and modules to master.</p>
+            </div>
+            <div class="intro-image">
+                <img src="images/aiml-image.png" alt="AIML Image"> <!-- Make sure to replace with a proper image URL -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Table -->
+    <section class="roadmap-section">
+        <div class="container">
+            <h2>Roadmap for AI Engineer</h2>
+
+            <table class="roadmap-table">
+                <thead>
+                    <tr>
+                        <th>S. No.</th>
+                        <th>Module</th>
+                        <th>Reference</th>
+                        <th>Video</th>
+                        <th>Notepad</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Programming</td>
+                        <td><a href="https://www.coursera.org/specializations/python" target="_blank">Go Through</a></td>
+                        <td><a href="https://www.youtube.com" target="_blank"><img src="images/youtube-icon.png" alt="YouTube"></a></td>
+                        <td><a href="https://anotepad.com" target="_blank"><img src="images/notepad-icon.png" alt="Notepad"></a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mathematics</td>
+                        <td><a href="https://www.khanacademy.org/math/linear-algebra" target="_blank">Go Through</a></td>
+                        <td><a href="https://www.youtube.com" target="_blank"><img src="images/youtube-icon.png" alt="YouTube"></a></td>
+                        <td><a href="https://anotepad.com" target="_blank"><img src="images/notepad-icon.png" alt="Notepad"></a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Machine Learning</td>
+                        <td><a href="https://developers.google.com/machine-learning/crash-course" target="_blank">Go Through</a></td>
+                        <td><a href="https://www.youtube.com" target="_blank"><img src="images/youtube-icon.png" alt="YouTube"></a></td>
+                        <td><a href="https://anotepad.com" target="_blank"><img src="images/notepad-icon.png" alt="Notepad"></a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Deep Learning</td>
+                        <td><a href="https://www.coursera.org/specializations/deep-learning" target="_blank">Go Through</a></td>
+                        <td><a href="https://www.youtube.com" target="_blank"><img src="images/youtube-icon.png" alt="YouTube"></a></td>
+                        <td><a href="https://anotepad.com" target="_blank"><img src="images/notepad-icon.png" alt="Notepad"></a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Natural Language Processing</td>
+                        <td><a href="https://cs50.harvard.edu/ai/2020/" target="_blank">Go Through</a></td>
+                        <td><a href="https://www.youtube.com" target="_blank"><img src="images/youtube-icon.png" alt="YouTube"></a></td>
+                        <td><a href="https://anotepad.com" target="_blank"><img src="images/notepad-icon.png" alt="Notepad"></a></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+    
+
+</body>
+</html>

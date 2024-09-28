@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learn - AIML Odyssey</title>
+    <link rel="stylesheet" href="/css/learn-styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand">AIML Odyssey</a>
+            <ul class="navbar-menu">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/learn}" class="active">Learn</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/aitools}">AITools</a></li>
+                <li><a th:href="@{/community}">Community</a></li>
+                <li><a th:href="@{/contactus}">Contact Us</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/login}">Login</a></li>
+                <li th:if="${session.username == null}"><a th:href="@{/signup}">Signup</a></li>
+                <li th:if="${session.username != null}" class="user-icon">
+                <a href="#">Hello, <span th:text="${session.username}"></span></a>
+                <ul class="dropdown">
+                <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="learn-section">
+        <!-- Introduction Section -->
+        <section class="aiml-intro">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1>What is AIML?</h1>
+                    <p>AIML (Artificial Intelligence and Machine Learning) represents the future of technology. It is transforming industries with automation, data-driven insights, and predictive analysis. Whether you're an AI engineer, data scientist, or machine learning engineer, the field is full of opportunities.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="/images/aiimg.jpg" alt="AI and ML Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Choose Your Role Section -->
+        <section class="choose-role">
+            <h2>Choose Your Dream Role</h2>
+
+            <!-- Envelopes for Roles -->
+            <div class="role-envelopes">
+                <div class="role-envelope" onclick="location.href='/aieng';">
+                    <div class="role-image">
+                        <img src="/images/AI-eng.jpg" alt="AI Engineer Image">
+                    </div>
+                    <div class="role-content">
+                        <h3>AI Engineer</h3>
+                    </div>
+                </div>
+
+                <div class="role-envelope" onclick="location.href='/data-scientist'">
+                    <div class="role-image">
+                        <img src="/images/dsa.png" alt="Data Scientist Image">
+                    </div>
+                    <div class="role-content">
+                        <h3>Data Scientist</h3>
+                    </div>
+                </div>
+
+                <div class="role-envelope" onclick="location.href='/data-analyst'">
+                    <div class="role-image">
+                        <img src="/images/danl.png" alt="Data Analyst Image">
+                    </div>
+                    <div class="role-content">
+                        <h3>Data Analyst</h3>
+                    </div>
+                </div>
+
+                <div class="role-envelope" onclick="location.href='/ml-engineer'">
+                    <div class="role-image">
+                        <img src="/images/mleng.png" alt="ML Engineer Image">
+                    </div>
+                    <div class="role-content">
+                        <h3>ML Engineer</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+     <footer>
+        <p>&copy; 2024 Created by NS Praneeth, B. Vishnu Vardhan, A. Sathvika</p>
+    </footer>
+
+    <script src="/js/animations.js"></script>
+</body>
+</html>
